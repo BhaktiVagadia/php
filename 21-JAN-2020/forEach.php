@@ -63,8 +63,8 @@
     }
 
     echo "<br>======================================<br>";
-    $arr = array( 1 => "a", "1" => "b" , true => "c" , 1.5 => "d");
+    $arr = array( 1 => "a", "three" => "b" , true => "c" , 2.5 => "d");
     foreach($arr as $element){
-        echo "<br>". $element;
+        echo "  ". $element;
     }
 ?>
