@@ -1,0 +1,12 @@
+explode :
+explode is used to convert string to array
+syntax : explode("delimeter",string);
+example :
+$string  = "mango,banana,apple";
+$array = explode(",",$string);
+ 
+ 
+ output array : ['mango','banana','apple']
+ 
+
+ 
