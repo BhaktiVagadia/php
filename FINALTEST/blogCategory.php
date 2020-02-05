@@ -2,8 +2,8 @@
     session_start();
     if(!isset($_SESSION['email']))
     {
-    header("location:Login.php");
-    exit();
+        header("location:Login.php");
+        exit();
     }
     require_once "connection.php";
 ?>

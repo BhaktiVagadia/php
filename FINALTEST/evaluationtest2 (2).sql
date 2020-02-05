@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2020 at 07:28 AM
+-- Generation Time: Feb 05, 2020 at 06:24 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.26
 
@@ -34,7 +34,7 @@ CREATE TABLE `blog_post` (
   `title` varchar(100) NOT NULL,
   `url` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `category` varchar(20) NOT NULL,
+  `category` varchar(50) NOT NULL,
   `image` varchar(100) NOT NULL,
   `publishedAt` varchar(30) NOT NULL,
   `createdAt` varchar(30) NOT NULL,
@@ -46,10 +46,7 @@ CREATE TABLE `blog_post` (
 --
 
 INSERT INTO `blog_post` (`postId`, `userId`, `title`, `url`, `content`, `category`, `image`, `publishedAt`, `createdAt`, `updatedAt`) VALUES
-(1, 1, 'gravity', 'gravity', 'gravity', 'physics', 'uploads/p1.JPG', '1580881812', '1580881812', '0'),
-(2, 1, 'force', 'force', 'force theory', 'physics', '', '0', '0', '0'),
-(3, 1, 'nano technology', 'nano technology', 'nano technology theory', 'physics', '', '2020-02-01', 'Wed/Feb/2020 07:02:36', 'Wed/Feb/2020 07:02:53'),
-(4, 1, 'xyz', 'abc', 'abc', 'physics', '', '2020-02-02', 'Wed/Feb/2020 07:18:08', 'Wed/Feb/2020 07:18:54');
+(1, 1, 'force', 'force', '                        force                    ', 'physics,chemistry', '', '2020-02-01', 'Wed/Feb/2020 05:38:34', 'Wed/Feb/2020 05:54:14');
 
 -- --------------------------------------------------------
 
@@ -67,17 +64,16 @@ CREATE TABLE `category` (
   `content` text NOT NULL,
   `image` varchar(100) NOT NULL,
   `createdAt` varchar(20) NOT NULL,
-  `UpdatedAt` varchar(20) NOT NULL
+  `updatedAt` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`categoryId`, `userId`, `parentCategoryId`, `title`, `metaTitle`, `url`, `content`, `image`, `createdAt`, `UpdatedAt`) VALUES
-(1, 1, 2, 'physics', 'physics', 'physics', 'physics', 'uploads/p1.JPG', '1580881775', '0'),
-(2, 1, 2, 'chemistry', 'chemistry', 'chemistry', 'chemistry', 'uploads/p2.jpg', '0', '0'),
-(3, 1, 2, 'biology', 'biology', 'biology', 'biology', 'uploads/p1.JPG', 'Wed/Feb/2020 07:22:3', '');
+INSERT INTO `category` (`categoryId`, `userId`, `parentCategoryId`, `title`, `metaTitle`, `url`, `content`, `image`, `createdAt`, `updatedAt`) VALUES
+(1, 1, 2, 'physics', 'physics', 'physics', 'physics', 'uploads/p1.JPG', 'Wed/Feb/2020 05:36:5', ''),
+(2, 1, 2, 'chemistry', 'chemistry', 'chemistry', 'chemistry', 'uploads/p2.jpg', 'Wed/Feb/2020 05:37:2', '');
 
 -- --------------------------------------------------------
 
@@ -117,9 +113,10 @@ CREATE TABLE `post_category` (
 
 INSERT INTO `post_category` (`postid`, `categoryId`) VALUES
 (1, 1),
-(2, 1),
-(3, 1),
-(4, 1);
+(1, 1),
+(1, 2),
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -196,13 +193,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blog_post`
 --
 ALTER TABLE `blog_post`
-  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `postId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `categoryId` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `categoryId` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `parentcategory`

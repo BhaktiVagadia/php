@@ -31,7 +31,7 @@
         else{
             echo "<br>Please choose image";
         }         
-}
+    }
     function insert($data,$table){
         $conn = connection();
         $columns = implode(',', array_keys($data));
@@ -56,7 +56,7 @@
              $updateQuery = "UPDATE $table SET $updatedata where postId ='$id' and userId = '$userid'";
         }
         else if( ( $table == 'category') ){
-            $updateQuery = "UPDATE $table SET $updatedata where categoryId ='$id' and userId = '$userid'";
+            echo $updateQuery = "UPDATE $table SET $updatedata where categoryId ='".$_SESSION['editId']."' and userId = '$userid'";
         }
         if(mysqli_query($GLOBALS['conn'],$updateQuery)){
             echo "<br>Data update in table";
@@ -129,14 +129,13 @@
          return $result;
     }
     function blogPostData(){
+        $conn = connection();
         $image = imageUpload();
-
         $email = $_SESSION['email'];
          $query = "SELECT userId from user where email = '$email'";
          $row = mysqli_fetch_assoc(mysqli_query($conn,$query));
          $userid = $row['userId'];
          $data = [];
-
          $data['userId'] = $userid;
          $data['title'] = $_POST['title'];
          $data['url'] = $_POST['url'];
@@ -145,21 +144,28 @@
          $data['image'] = $image;
          $data['publishedAt'] = $_POST['publishedAt'];
          $data['updatedAt'] = 0;
-
-         return $data[];
+         return $data;
     }
     function post_categoryData(){
         $conn = connection();
-            $data1 = [] ;
             $query = "SELECT MAX(postId) from blog_post";
             $row = mysqli_fetch_assoc(mysqli_query($conn , $query));
             $data1['postId'] = $row['MAX(postId)'];
             $category = $_POST['category'];
+            print_r($category);
             foreach($category as $value){
                 $query1 = "SELECT categoryId from category where title = '$value'";
                 $row2 = mysqli_fetch_assoc(mysqli_query($conn , $query1));
-                $data1['categoryId'] = $row2['categoryId'];   
-        return $data1[];
+                $data1['categoryId'] = $row2['categoryId']; 
+                if(isset($_POST['submit'])){
+                    insert($data1,'post_category');
+                }
+                if(isset($_POST['update'])){
+                    insert($data1,'post_category');
+                }
+                
+            }  
+        //return $data1;
     }
     function categoryData(){
         $image = imageUpload();
@@ -179,5 +185,6 @@
         $query1 = "SELECT parentCategoryId from parentcategory where ParentCategoryName = '$parentCategory'";
         $row1 = mysqli_fetch_assoc(mysqli_query($conn,$query1));
         $data['parentCategoryId'] = $row1['parentCategoryId'];
+        return $data;
     }
 ?>
