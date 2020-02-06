@@ -1,0 +1,114 @@
+SELECT COUNT(country),country from customer GROUP BY country
+	COUNT(country)	country
+	------------------------
+	1				china
+	2				India
+	1				usa
+
+select C.categoryName, P.productName,P.price from product P LEFT JOIN category C on P.categoryId = C.categoryId
+
+	categoryName	productName	price
+	---------------------------------
+	C1				P1			10
+	C2				P2			20
+	C1				P3			30
+
+SELECT productName,price from product HAVING price > 10
+
+	productName		price
+	---------------------
+	P2				20
+
+select C.categoryName,P.productName,P.price from product P LEFT JOIN category C on P.categoryId = C.categoryId GROUP BY P.categoryId
+
+	categoryName	GROUP_CONCAT(P.productName)	price
+	--------------------------------------------------
+	C1				P1							10
+	C2				P2							20
+
+select C.categoryName,GROUP_CONCAT(P.productName),P.price from product P LEFT JOIN category C on P.categoryId = C.categoryId GROUP BY P.categoryId
+
+	categoryName	GROUP_CONCAT(P.productName)	price
+	--------------------------------------------------
+	C1				P1,P3						10
+	C2				P2							20
+
+SELECT PC.CategoryName As Parent_Category,C.CategoryName AS Child_Category FROM category C INNER JOIN category PC on PC.categoryId = C.ParentCategoryId GROUP BY C.ParentCategoryId
+
+	Parent_Category		Child_Category
+	-----------------------------------
+	science				physics
+	maths1				maths1
+
+
+SELECT PC.CategoryName,GROUP_CONCAT(C.CategoryName) FROM category C INNER JOIN category PC on PC.categoryId = C.ParentCategoryId GROUP BY C.ParentCategoryId
+
+
+	CategoryName	GROUP_CONCAT(C.CategoryName)
+	---------------------------------------------
+	science			physics,chemistry,biology
+	maths			maths1,maths2,maths3
+
+SELECT country , GROUP_CONCAT(customerName) AS Customer FROM customer GROUP BY country
+
+   	country		Customer
+	----------------------------
+	china		twinkal
+	India		bhakti,ruchita
+	usa			drashti
+	
+SELECT * INTO newproduct FROM product
+
+SELECT * from customer where customerId BETWEEN 2 and 4
+	customerId	customerName	city		country
+	-----------------------------------------------
+	2			ruchita			ahmedabad	India
+	3			drashti			surat		usa
+	4			twinkal			rajkot		china
+
+SELECT * from customer where customerId IN (2,4)
+
+	customerId	customerName	city		country
+	-----------------------------------------------
+	2			ruchita			ahmedabad	India
+	4			twinkal			rajkot		china
+	
+SELECT productName,MAX(price) AS Second_MaximumPrice FROM product WHERE price NOT IN(SELECT MAX(price) FROM product
+
+	productName	Second_MaximumPrice
+	--------------------------------
+	P1			20
+	
+SELECT CategoryName , ParentCategoryId, CASE WHEN ParentCategoryId = 0 THEN "This is Parent Category" WHEN ParentCategoryId <> 0 THEN "This is Child Category" END AS CheckCategory FROM category
+
+CategoryName	ParentCategoryId	CheckCategory
+-----------------------------------------------------------
+science			0					This is Parent Category
+physics			1					This is Child Category
+chemistry		1					This is Child Category
+maths			0					This is Parent Category
+maths1			4					This is Child Category
+maths2			4					This is Child Category
+biology			1					This is Child Category
+maths3			4					This is Child Category
+
+SELECT MID("Bhakti vagadia", 1, 6) AS ExtractString
+
+	ExtractString
+	--------------
+	Bhakti
+	
+SELECT * FROM customer WHERE customerId % 2 = 1
+
+	customerId	customerName	city	country
+	----------------------------------------------
+	1			bhakti			dhoraji	India
+	3			drashti			surat	usa
+
+SELECT * from customer where country LIKE '%i%a'
+	
+customerId	customerName	city		country
+--------------------------------------------
+1			bhakti			dhoraji		India
+2			ruchita			ahmedabad	India
+4			twinkal			rajkot		china
