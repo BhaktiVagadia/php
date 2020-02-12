@@ -7,16 +7,27 @@ use App\Models\Post;
         public function indexAction(){
             $posts = Post::getAll();
             View::renderTemplate('Posts/index.html',['posts'=>$posts]);
-            
-            //echo "<br>Hello from the index action in the Post Controller";
-           // echo "<p>Query String Parameters : <pre>". htmlspecialchars(print_r($_GET,true))."</pre></p>";
         }
-        public function addNew(){
-            echo "<br>Hello from the addNew action in the Post Controller";
+        public function insertAction(){
+            if(isset($_POST['submit'])){
+                Post::insertData($_POST);
+                header("Location:/MVCFRAMEWORK/public/posts/index");
+            }
+            else{
+                View::renderTemplate('Posts/insert.html');
+            }
+           
         }
-        public function edit(){
-            echo "<br>Hello from the Edit action in the Post Controller";
-            echo "<p>Route Parameters : <pre>". htmlspecialchars(print_r($this->route_params,true))."</pre></p>";
+        public function deleteAction(){
+            if(isset($_GET['id'])){
+                Post::deletedata($_GET['id']);
+                header("Location:/MVCFRAMEWORK/public/posts/index");
+            }
+        }
+        public function editAction(){
+            if(isset($_GET['id'])){
+                echo "edit";
+            } 
         }
     }
 ?>

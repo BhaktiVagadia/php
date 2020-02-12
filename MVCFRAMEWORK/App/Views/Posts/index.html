@@ -1,11 +1,22 @@
 {% extends "base.html" %}
 {% block title %} Posts {% endblock %}
+
 {% block body %}
     <h1>Posts</h1>
-    <ul>
+    <p><a href="/MVCFRAMEWORK/public/posts/insert">Add New Post</a></p>
+    <table border="1px solid black">
+        <tr>
+            <th>Post Title</th>
+            <th>Post Content</th>
+            <th colspan="2">Action</th>
+        </tr>
         {% for post in posts %} 
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content }}</p>
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{{ post.content }}</td>
+            <td><a href="/MVCFRAMEWORK/public/posts/edit?id={{ post.id }}">Edit</a></td>
+            <td><a href="/MVCFRAMEWORK/public/posts/delete?id={{ post.id }}">Delete</a></td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
