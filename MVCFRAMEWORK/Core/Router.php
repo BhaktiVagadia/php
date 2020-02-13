@@ -65,15 +65,15 @@ namespace Core;
                         $controller_object->$action();
                     }
                     else{
-                        echo "<br>Method Not Found";
+                        throw new \Exception("Method $action (in controller $controller) not found");
                     }
                 }
                 else{
-                    echo "<br>Controller Class not Found";
+                    throw new \Exception("Controller Class $controller not Found");
                 }
             }
             else{
-                echo "<br>No Route matched";
+                throw new \Exception("No Route matched",404);
             }
         }
         protected function convertToStudlyCaps($string){

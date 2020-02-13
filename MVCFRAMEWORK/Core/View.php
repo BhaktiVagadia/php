@@ -8,7 +8,7 @@ namespace Core;
                 require $file;
             }
             else{
-                echo "File Not Found";
+                throw new \Exception("File Not Found");
             }
         }
         public static function renderTemplate($template,$args = []){

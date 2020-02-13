@@ -2,17 +2,18 @@
 {% block title %} Posts {% endblock %}
 
 {% block body %}
-    <h3>Add Post</h3>
+    <h3>Post</h3>
 <html>
     <form method="POST" action="">
          <table>
               <tr>
                    <td>Post Title</td>
-                   <td><input type="text" name="title"></td>
+                  
+                   <td><input type="text" name="title" value="{{ title }}"></td>
               </tr>
               <tr>
                    <td>Post Content</td>
-                   <td><input type="text" name="content"></td>
+                   <td><input type="text" name="content" value="{{ content }}"></td>
               </tr>
               <tr>
                    <td><input type="submit" name="submit" value="Add"></td>

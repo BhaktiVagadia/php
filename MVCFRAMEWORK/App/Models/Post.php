@@ -5,7 +5,7 @@ use PDO;
 <?php
 class Post extends \Core\Model
 {
-     public function getAll(){
+     public static function getAll(){
           try{
                $db = static::getDB();
                $stmt = $db->query("SELECT * FROM posts");
@@ -16,7 +16,7 @@ class Post extends \Core\Model
                echo $e->getMessage();
           }
      } 
-     public function insertData($data){
+     public static function insertData($data){
           $title = $data['title'];
           $content = $data['content'];
           try{
@@ -28,7 +28,20 @@ class Post extends \Core\Model
                echo $e->getMessage();
           }
      }
-     public function deleteData($id){
+     public static function editData($data){
+          $title = $data['title'];
+          $content = $data['content'];
+          $id = $_GET['id'];
+          try{
+               $db = static::getDB();
+               $query = "UPDATE posts SET title='$title',content='$content' where id='$id'";
+               $db->exec($query);
+          }
+          catch(PDOException $e){
+               echo $e->getMessage();
+          }
+     }
+     public static function deleteData($id){
           try{
                $db = static::getDB();
                $query="DELETE FROM posts where id = '$id'";
@@ -38,6 +51,16 @@ class Post extends \Core\Model
                echo $e->getMessage();
           }
      }
+     public static function getData($id){
+          try{
+               $db = static::getDB();
+               $stmt = $db->query("SELECT title,content FROM posts where id = '$id' ");
+               $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+               return $result;
+          }
+          catch(PDOException $e){
+               echo $e->getMessage();
+          }
+     }
 }
-
 ?>

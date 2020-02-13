@@ -1,0 +1,63 @@
+[13-Feb-2020 11:19:32 Europe/Berlin] Uncaught Exception: 'Exception'<p>Message : 'No Route matched'
+Stack Trace :<pre>#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}</pre>
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:20:23 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:22:36 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:38:37 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:40:52 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:41:27 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:41:37 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Products not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products/index')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line72
+[13-Feb-2020 11:42:12 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method viewAction not found in controllerApp\Controllers\Posts'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(65): Core\Controller->__call('view', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('posts/view')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18
+[13-Feb-2020 11:43:30 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method viewAction not found in controllerApp\Controllers\Posts'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(65): Core\Controller->__call('view', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('posts/view')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18
+[13-Feb-2020 11:43:49 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method viewAction not found in controllerApp\Controllers\Posts'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(65): Core\Controller->__call('view', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('posts/view')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18
+[13-Feb-2020 11:52:05 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('products')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line76
+[13-Feb-2020 11:52:18 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method viewAction not found in controllerApp\Controllers\Posts'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(65): Core\Controller->__call('view', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(27): Core\Router->dispatch('posts/view')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18

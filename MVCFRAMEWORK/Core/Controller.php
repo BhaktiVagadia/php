@@ -15,7 +15,7 @@ abstract class Controller
             }           
         }
         else{
-            echo "Method not found";
+            throw new \Exception("Method $method not found in controller".get_class($this));
         }
     }
     protected function before(){

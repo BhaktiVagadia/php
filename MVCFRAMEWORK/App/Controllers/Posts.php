@@ -26,7 +26,12 @@ use App\Models\Post;
         }
         public function editAction(){
             if(isset($_GET['id'])){
-                echo "edit";
+               $data = Post::getData($_GET['id']);
+               View::renderTemplate('Posts/insert.html',$data[0]);
+               if(isset($_POST['submit'])){
+                    Post::editData($_POST);
+                    header("Location:/MVCFRAMEWORK/public/posts/index");
+               }              
             } 
         }
     }
