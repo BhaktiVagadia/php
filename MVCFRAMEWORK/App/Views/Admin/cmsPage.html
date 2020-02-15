@@ -1,0 +1,23 @@
+<html>
+    <h1>CMS PAGE</h1>
+    <p><a href="/MVCFRAMEWORK/public/admin/cmsPage/add">Add CMS Page</a></p>
+    <table border="1px solid black">
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Status</th>
+            <th>URL</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for page in pages %}
+            <tr>
+            <td>{{ page.pageTitle }}</td> 
+            <td>{{ page.content }}</td> 
+            <td>{{ page.status }}</td> 
+            <td>{{ page.urlKey }}</td> 
+            <td><a href="/MVCFRAMEWORK/public/admin/cmsPage/edit?id={{ page.id }}">Edit</a></td>
+            <td><a href="/MVCFRAMEWORK/public/admin/cmsPage/delete?id={{ page.id }}">Delete</a></td> 
+            </tr>
+        {% endfor %}
+    </table>
+</html>

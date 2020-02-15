@@ -1,0 +1,36 @@
+<html>
+    <h1>Add CMS Page</h1>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Page Title</td>
+                <td>
+                    <input type="text" name="title" value="{{ data.pageTitle }}">
+                </td>
+            </tr>
+            <tr>
+                <td>URL Key</td>
+                <td>
+                    <input name="urlKey" type="text" value="{{ data.urlKey }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input type="text" name="status" value="{{ data.status }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Content</td>
+                <td>
+                    <textarea name="content" rows="5" cols="22">{{ data.content }}"</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</html>

@@ -12,25 +12,7 @@ namespace Core;
         public function getRoutes(){
             return $this->routes;
         }
-        public function match($url){        
-             // foreach($this->routes as $route=>$params){
-            //     if($url == $route){
-            //         $this->params = $params;
-            //         return true;
-            //     }
-            // }
-           // $reg_exp = "/^(?P<controller>[a-z-]+)\/(?P<action>[a-z-]+)$/";
-            // if(preg_match($reg_exp,$url,$matches)){
-            //     $params = [];
-            //     foreach($matches as $key=>$match){
-            //         if(is_string($key)){
-            //             $params[$key] = $match;
-            //         }
-            //     }
-            //     $this->params = $params;
-            //     return true;
-
-            // }
+        public function match($url){                   
             foreach($this->routes as $route=>$params){
                 if(preg_match($route,$url,$matches)){
                     foreach($matches as $key=>$match){
@@ -54,11 +36,9 @@ namespace Core;
             if($this->match($url)){
                 $controller = $this->params['controller'];
                 $controller = $this->convertToStudlyCaps($controller);
-               // $controller = "App\Controllers\\$controller";
                 $controller = $this->getNamespace().$controller ;
                 if(class_exists($controller)){
                     $controller_object = new $controller($this->params);
-
                     $action = $this->params['action'];
                     $action = $this->convertToCamelCase($action);
                     if(is_callable([$controller_object, $action])){
@@ -96,11 +76,11 @@ namespace Core;
         }
         protected function getNamespace(){
             $namespace = 'App\Controllers\\';
-            if(array_key_exists('namespace',$this->params)){
-                $namespace.= $this->params['namespace'].'\\';
-            }
+            if(array_key_exists('namespace',$this->params)) {
+                $namespace.=$this->params['namespace'].'\\';
+            }        
             return $namespace;
+           
         }
-    }
-    
+    }   
 ?>

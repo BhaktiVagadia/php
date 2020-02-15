@@ -1,0 +1,84 @@
+{% block body %}
+<html>
+<h1>Add Product</h1>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" value="{{ data.producName }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    <select name="category">
+                        {% for category in categories %}                      
+                            {% if category.CategoryName == productCategory %}
+                                {% set selected="selected" %}
+                            {% else %}
+                                {% set selected="" %}
+                            {% endif %}
+                            
+                            <option value="{{ category.CategoryName }}" {{ selected }}>{{ category.CategoryName }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>SKU</td>
+                <td>
+                    <input type="text" name="sku" value="{{ data.sku }}">
+                </td>
+            </tr>
+            <tr>
+                <td>URL Key</td>
+                <td>
+                    <input type="text" name="url" value="{{ data.urlKey }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td>
+                    <input type="file" name="image" value="{{ data.image }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input type="text" name="status" value="{{ data.status }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <textarea rows="5" cols="30" name="description">{{ data.description }}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Short Description</td>
+                <td>
+                    <textarea rows="3" cols="30" name="shortDes">{{ data.shortDescription }}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input type="text" name="price" value="{{ data.price }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Stock</td>
+                <td>
+                    <input type="text" name="stock" value="{{ data.stock }}">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</html>
+{% endblock %}

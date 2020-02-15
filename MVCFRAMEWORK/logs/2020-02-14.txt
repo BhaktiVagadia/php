@@ -1,0 +1,41 @@
+[14-Feb-2020 06:34:13 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('olkj')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line57
+[14-Feb-2020 06:35:36 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('olkj')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line57
+[14-Feb-2020 09:23:46 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line57
+[14-Feb-2020 09:23:55 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('adminusers')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line57
+[14-Feb-2020 09:24:01 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Admin not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/users')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line53
+[14-Feb-2020 09:24:09 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method loginAction not found in controllerApp\Controllers\Admin\Users'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(46): Core\Controller->__call('login', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/users/log...')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18
+[14-Feb-2020 09:24:14 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Admin not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/users')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line53
+[14-Feb-2020 09:28:17 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Admin not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/login')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line53

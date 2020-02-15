@@ -1,0 +1,59 @@
+{% block body %}
+<html>
+    <h1>Add Category</h1>
+    <form method="POST">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" value="{{ data.CategoryName }}">
+                </td>
+            </tr>
+            <tr>
+                <td>URL Key</td>
+                <td>
+                    <input type="text" name="url" value="{{ data.urlKey }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td>
+                    <input type="file" name="image" value="{{ data.image }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <input type="text" name="status" value="{{ data.status }}">
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <textarea rows="5" cols="30" name="description">{{ data.description }}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>parent Category</td>
+                <td>
+                    <select name="parentCategory">
+                        {% for parent in parents %}
+                            {% if  parent.parentCategoryName == data.parentCategory %}
+                                {% set selected="selected" %}
+                            {% else %}
+                                {% set selected="" %}
+                            {% endif %}
+                            <option value="{{ parent.parentCategoryName }}" {{selected}}>{{ parent.parentCategoryName }}</option>
+                        {% endfor %}
+                    </select>
+                 </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</html>
+{% endblock %}

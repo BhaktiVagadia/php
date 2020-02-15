@@ -1,0 +1,15 @@
+[14-Feb-2020 05:48:31 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Admin not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/user')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line53
+[14-Feb-2020 05:48:41 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Controller Class App\Controllers\Admin\User not Found'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/user/inde...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line53
+[14-Feb-2020 06:06:59 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('posts/index/sdf...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line57

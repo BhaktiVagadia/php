@@ -1,0 +1,24 @@
+<html>
+    <h1>Product</h1>
+    <p><a href="/MVCFRAMEWORK/public/admin/Product/add">Add Product</a></p>
+    <table border="1px solid black">
+        <tr>
+            <th>Product Name</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th colspan="2">Action</th>
+        </tr>
+        {% for product in products %} 
+            <tr>
+                <td>{{ product.producName }}</td>
+                <td>{{ product.image }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.stock }}</td>
+                <td><a href="/MVCFRAMEWORK/public/admin/Product/edit?id={{ product.productId}}">Edit</a></td>
+                <td><a href="/MVCFRAMEWORK/public/admin/Product/delete?id={{ product.productId }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+       
+    </table>
+</html>

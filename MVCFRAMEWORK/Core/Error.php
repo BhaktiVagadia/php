@@ -20,7 +20,7 @@ class Error{
             echo "<p>Thrown in '".$exception->getFile()."' on Line".$exception->getLine()."</p>";
         }
         else{
-            $log = \dirname(__DIR__).'/logs'.date('Y-m-d').'.txt';
+            $log = \dirname(__DIR__).'/logs/'.date('Y-m-d').'.txt';
             ini_set('error_log',$log);
             $message = "Uncaught Exception: '".get_class($exception)."'";
             $message.= "\nMessage : '".$exception->getMessage()."'";
@@ -28,13 +28,6 @@ class Error{
             $message.="\nThrown in '".$exception->getFile()."' on Line".$exception->getLine();
             error_log($message);
             View::renderTemplate("$code.html");
-            //echo "<h1>An Error Occured</h1>";
-            // if($code == 404){
-            //     echo "<h1>Page Not Found</h1>";
-            // }
-            // else{
-            //     echo "<h1>An Error Occured</h1>";
-            // }
         }
     }
 }
