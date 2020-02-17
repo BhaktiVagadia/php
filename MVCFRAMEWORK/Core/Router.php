@@ -32,7 +32,6 @@ namespace Core;
 
         public function dispatch($url){
             $url = $this->removeQueryStringVariables($url);
-            
             if($this->match($url)){
                 $controller = $this->params['controller'];
                 $controller = $this->convertToStudlyCaps($controller);
@@ -78,7 +77,7 @@ namespace Core;
             $namespace = 'App\Controllers\\';
             if(array_key_exists('namespace',$this->params)) {
                 $namespace.=$this->params['namespace'].'\\';
-            }        
+            }       
             return $namespace;
            
         }
