@@ -1,0 +1,19 @@
+{% block body %}
+<h1>Category</h1>
+    <h2>Category Name : {{category.CategoryName}}</h2>
+    {% if category.status == "Not-Available" %}
+        <h1>Sorry, This Category is Corrently Not-Available!!</h1>
+    {% else %}
+        <h3>Products</h3>
+        <table>
+            {% for product in products %}
+                <tr>
+                <td><a href="/MVCFRAMEWORK/public/product/view/{{product.producName}}"><b>{{product.producName}}</b></a></td>
+                <td><img src="../../../uploads/{{product.image}}" height="100px" width="100px"></td>
+                <td>Price : {{product.price}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+{% endblock %}

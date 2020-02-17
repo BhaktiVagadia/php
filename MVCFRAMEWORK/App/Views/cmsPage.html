@@ -1,0 +1,9 @@
+{% block body %}
+    <h1>CMS PAGE</h1>
+    {% if status == "Not-Available" %}
+        <h1>Sorry, This Page is Corrently Not-Available!!</h1>
+    {% else %}
+       <h1> {{ pageTitle }} </h1>
+       <h2>{{ content }}</h2>
+    {% endif %}
+{% endblock %}

@@ -10,7 +10,7 @@ class cmsPage extends \Core\Controller{
     public function addAction(){
         if(isset($_POST['submit'])){
             Admins::insertData($_POST,'cms_page');
-            header("Location:/MVCFRAMEWORK/public/add/cmsPage");
+            header("Location:/MVCFRAMEWORK/public/admin/cmsPage");
         }
         else{
             View::renderTemplate('Admin/addCmsPage.html');

@@ -1,8 +1,13 @@
-<h1>Product</h1>
 {% block body %}
+<h1>Product</h1>
+{% if status == "Not-Available" %}
+    <h1>Sorry, This Product is Corrently Not-Available!!</h1>
+{% else %}
     <h2>Product Name : {{ producName }}</h2>
+    <h3>Product Image : </h3><img src="../../../uploads/{{ image }}" height="150px" width="150px">
     <h3>Product Price : {{price}}</h3>
     <h3>Product Stock : {{stock}}</h3>
     <h3>Description : {{description}}</h3>
     <h3>Sort Description : {{shortDescription}}</h3>
+{% endif %}
 {% endblock%}

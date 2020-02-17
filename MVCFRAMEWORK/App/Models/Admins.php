@@ -100,10 +100,13 @@ class Admins extends \Core\Model {
        public static function filterData($data,$table){
             if($table == 'products'){
                 $tableData = [];
+                $image = Admins::imageUpload();
+                if($image != ""){
+                    $tableData['image'] = $image;
+                }
                 $tableData['producName'] = $data['name'];
                 $tableData['sku'] = $data['sku'];
                 $tableData['urlKey'] = $data['url'];
-                $tableData['image'] = $data['image'];
                 $tableData['status'] = $data['status'];
                 $tableData['description'] = $data['description'];
                 $tableData['shortDescription'] = $data['shortDes'];
@@ -113,9 +116,12 @@ class Admins extends \Core\Model {
             }
             else if($table == 'category'){
                 $tableData = [];
+                $image=Admins::imageUpload();
+                if($image != ""){
+                    $tableData['image'] = $image;
+                }
                 $tableData['CategoryName'] = $data['name'];
                 $tableData['urlKey'] = $data['url'];
-                $tableData['image'] = $data['image'];
                 $tableData['status'] = $data['status'];
                 $tableData['description'] = $data['description'];
                 $tableData['parentCategory'] = $data['parentCategory'];
@@ -136,5 +142,31 @@ class Admins extends \Core\Model {
             }
             return $tableData;
        }
+       public static function imageUpload(){
+          
+        $name = $_FILES['image']['name'];
+        $extension = strtolower(substr($name,strpos($name,'.')+1));
+        $type = $_FILES['image']['type'];
+        $temp_name = $_FILES['image']['tmp_name'];
+        $location = 'C:/xampp/htdocs/MVCFRAMEWORK/uploads/';
+        $image = $location.$name;
+        if(isset($name) ){
+            if( ($extension == 'jpeg' || $extension == 'jpg' || $extension == 'png') && $type == 'image/jpeg'){
+                if(move_uploaded_file($temp_name , $location.$name)){
+                        echo "<br>Image Uploaded";
+                        return $name;
+                } 
+                else{
+                    echo "<br>error occured to upload Image";
+                }
+            }
+            else{
+                echo "<br image should be jpeg file Only";
+            }
+        }
+        else{
+            return "";
+        }         
+    }
 }
 ?>

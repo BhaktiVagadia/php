@@ -1,4 +1,5 @@
-<html>
+{% extends 'Admin/dashbord.html' %}
+{% block body%}
     <h1>CMS PAGE</h1>
     <p><a href="/MVCFRAMEWORK/public/admin/cmsPage/add">Add CMS Page</a></p>
     <table border="1px solid black">
@@ -20,4 +21,4 @@
             </tr>
         {% endfor %}
     </table>
-</html>
+{%endblock%}

@@ -13,6 +13,17 @@ class Categories extends \Core\Model{
             echo $e->getMessage();
        }
     }
+    public static function fetchAll(){
+            try{
+                $db = static::getDB();
+                $stmt = $db->query("SELECT * FROM category");
+                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                return $result;
+        }
+        catch(PDOException $e){
+                echo $e->getMessage();
+        }
+    }
     public static function displayProduct($catId){
         try{
             $db = static::getDB();

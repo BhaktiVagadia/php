@@ -8,8 +8,7 @@
     $router->add('admin/{controller}',['namespace'=>'Admin','action'=>'index']);
     $router->add('{controller}/{action}');
     $router->add('admin/{controller}/{action}',['namespace' => 'Admin']);
-    $router->add('{controller}/{action}/{id:[a-z]+}');
-   
+    $router->add('{controller}/{action}/{id:[a-z]+}');  
     $url = $_SERVER['QUERY_STRING'];
     $router->dispatch($url);
 ?>

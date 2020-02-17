@@ -1,4 +1,5 @@
-<html>
+{% extends 'Admin/dashbord.html' %}
+{% block body%}
     <h1>Category</h1>
     <p><a href="/MVCFRAMEWORK/public/admin/Category/add">Add Category</a></p>
     <table border="1px solid black">
@@ -6,16 +7,18 @@
             <th>Name</th>
             <th>Image</th>
             <th>Parent Category</th>
+            <th>Status</th>
             <th colspan="2">Action</th>
             {% for Category in categories %} 
             <tr>
                 <td>{{ Category.CategoryName }}</td>
-                <td>{{ Category.image }}</td>
+                <td><img src="../../uploads/{{ Category.image }}" height="50px" width="50px"></td>
                 <td>{{ Category.parentCategory }}</td>
+                <td>{{ Category.status}}
                 <td><a href="/MVCFRAMEWORK/public/admin/Category/edit?id={{ Category.categoryId }}">Edit</a></td>
                 <td><a href="/MVCFRAMEWORK/public/admin/Category/delete?id={{ Category.categoryId }}">Delete</a></td>
             </tr>
             {% endfor %}
         </tr>
     </table>
-</html>
+{%endblock%}

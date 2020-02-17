@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <nav style="background-color: aqua; padding-left: 50px;padding-top: 10px; padding-bottom: 10px;">
+            {% for category in categories %}
+                <a href="/MVCFRAMEWORK/public/category/view/{{category.CategoryName}}" style="padding-right: 15px;">{{category.CategoryName}}</a>
+            {% endfor %}
+        </nav>
+    </body>
+</html>

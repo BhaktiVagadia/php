@@ -1,7 +1,8 @@
+{% extends 'Admin/dashbord.html' %}
 {% block body %}
 <html>
 <h1>Add Product</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>Name</td>
@@ -46,7 +47,21 @@
             <tr>
                 <td>Status</td>
                 <td>
-                    <input type="text" name="status" value="{{ data.status }}">
+                    <!-- <input type="text" name="status" value="{{ data.status }}"> -->
+                    <select name="status">
+                        {% if data.status == "available" %}
+                                {% set selected="selected" %}
+                            {% else %}
+                                {% set selected="" %}
+                        {% endif %}
+                        <option value="available" {{selected}}>Available</option>
+                        {% if data.status == "Not-Available" %}
+                                {% set selected="selected" %}
+                            {% else %}
+                                {% set selected="" %}
+                        {% endif %}
+                        <option value="Not-Available" {{selected}}>Not Available</option>
+                    </select>
                 </td>
             </tr>
             <tr>
