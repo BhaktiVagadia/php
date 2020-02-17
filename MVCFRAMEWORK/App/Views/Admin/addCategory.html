@@ -1,6 +1,9 @@
 {% extends 'Admin/dashbord.html' %}
+
 {% block body %}
+<link rel="stylesheet" href="App/Views/style.css" >
     <h1>Add Category</h1>
+    <div class="div1">
     <form method="POST" enctype="multipart/form-data">
         <table>
             <tr>
@@ -24,7 +27,6 @@
             <tr>
                 <td>Status</td>
                 <td>
-                    <!-- <input type="text" name="status" value="{{ data.status }}"> -->
                     <select name="status">
                         {% if data.status == "available" %}
                                 {% set selected="selected" %}
@@ -69,4 +71,5 @@
             </tr>
         </table>
     </form>
+    </div>
 {% endblock %}

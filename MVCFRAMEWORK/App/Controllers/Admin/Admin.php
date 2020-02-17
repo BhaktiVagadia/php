@@ -1,6 +1,6 @@
 <?php
 namespace App\Controllers\Admin;
-session_start();
+
 use \Core\View;
 use App\Models\Admins;
 use App\Config;
