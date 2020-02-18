@@ -64,3 +64,74 @@ Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controlle
 #1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/product/v...')
 #2 {main}
 Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18
+[18-Feb-2020 10:52:50 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Page Found'
+Stack Trace :#0 [internal function]: App\Controllers\CmsPage->viewAction('aboutuss')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(46): Core\Controller->__call('view', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('cmsPage/view/ab...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\cmsPage.php' on Line19
+[18-Feb-2020 10:57:42 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Page Found'
+Stack Trace :#0 [internal function]: App\Controllers\CmsPage->viewAction('home12')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(46): Core\Controller->__call('view', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('cmsPage/view/ho...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\cmsPage.php' on Line19
+[18-Feb-2020 10:59:07 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('admin/Category/...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line61
+[18-Feb-2020 11:06:29 Europe/Berlin] Uncaught Exception: 'Error'
+Message : 'Call to undefined method App\Models\Categories::fetchParents()'
+Stack Trace :#0 [internal function]: App\Controllers\Home->indexAction()
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controller->__call('index', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Home.php' on Line13
+[18-Feb-2020 11:06:35 Europe/Berlin] Uncaught Exception: 'Error'
+Message : 'Call to undefined method App\Models\Categories::fetchParents()'
+Stack Trace :#0 [internal function]: App\Controllers\Home->indexAction()
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controller->__call('index', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Home.php' on Line13
+[18-Feb-2020 11:06:41 Europe/Berlin] Uncaught Exception: 'Error'
+Message : 'Call to undefined method App\Models\Categories::fetchParents()'
+Stack Trace :#0 [internal function]: App\Controllers\Home->indexAction()
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controller->__call('index', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Home.php' on Line13
+[18-Feb-2020 11:06:47 Europe/Berlin] Uncaught Exception: 'Error'
+Message : 'Call to undefined method App\Models\Categories::fetchParents()'
+Stack Trace :#0 [internal function]: App\Controllers\Home->indexAction()
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controller->__call('index', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Home.php' on Line13
+[18-Feb-2020 11:06:52 Europe/Berlin] Uncaught Exception: 'Error'
+Message : 'Call to undefined method App\Models\Categories::fetchParents()'
+Stack Trace :#0 [internal function]: App\Controllers\Product->viewAction('apple')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(46): Core\Controller->__call('view', Array)
+#3 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('product/view/ap...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Product.php' on Line9
+[18-Feb-2020 11:12:08 Europe/Berlin] Uncaught Exception: 'ErrorException'
+Message : 'Object of class PDOStatement could not be converted to string'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Categories.php(8): Core\Error::errorHandler(4096, 'Object of class...', 'C:\\xampp\\htdocs...', 8, Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Category.php(12): App\Models\Categories::displayData('mobile')
+#2 [internal function]: App\Controllers\Category->viewAction('mobile')
+#3 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(46): Core\Controller->__call('view', Array)
+#5 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(21): Core\Router->dispatch('category/view/m...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Categories.php' on Line8

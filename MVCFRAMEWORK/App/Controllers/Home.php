@@ -11,7 +11,7 @@ use App\Models\CmsPages;
         }
         public function indexAction(){
             $parents = Categories::fetchParents();
-            $category = Categories::fetchAll();
+            $category = Categories::fetchAll('category');
             View::renderTemplate("header.html",['parents'=>$parents,'categories'=>$category]);
 
             $data = CmsPages::displayData('home');

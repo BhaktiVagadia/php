@@ -4,14 +4,12 @@ use \Core\View;
 use App\Models\Categories;
 use App\Models\CmsPages;
 class CmsPage extends \Core\Controller{
-    public function viewAction(){
-        $parents = Categories::fetchParents();
-        $category = Categories::fetchAll();
+    public function viewAction($id){
+        $parents = Categories::fetchAll('parentcategory');
+        $category = Categories::fetchAll('category');
         View::renderTemplate("header.html",['parents'=>$parents,'categories'=>$category]);
-
-        $url = $_SERVER['QUERY_STRING'];
-        $temp = substr($url,strripos($url,"/")+1);     
-        $data = CmsPages::displayData($temp);
+     
+        $data = CmsPages::displayData($id);
         if($data != []){
             View::renderTemplate("cmsPage.html",$data[0]);
         }
@@ -22,7 +20,7 @@ class CmsPage extends \Core\Controller{
         View::renderTemplate("footer.html",['cmspages'=>$cmsPage]);
     }
     public function homeAction(){
-        $category = Categories::fetchAll();        
+        $category = Categories::fetchAll('category');        
         View::renderTemplate("header.html",['categories'=>$category]);
 
         $data = CmsPages::displayData('home');

@@ -13,27 +13,16 @@ class Categories extends \Core\Model{
             echo $e->getMessage();
        }
     }
-    public static function fetchAll(){
+    public static function fetchAll($table){
         try{
             $db = static::getDB();
-            $stmt = $db->query("SELECT * FROM category");
+            $stmt = $db->query("SELECT * FROM $table");
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
         catch(PDOException $e){
                 echo $e->getMessage();
         }
-    }
-    public static function fetchParents(){
-        try{
-            $db = static::getDB();
-            $stmt = $db->query("SELECT * FROM parentcategory");
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $result;
-        }
-        catch(PDOException $e){
-                echo $e->getMessage();
-        } 
     }
     public static function displayProduct($catId){
         try{
