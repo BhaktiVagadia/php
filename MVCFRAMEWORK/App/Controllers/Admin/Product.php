@@ -37,41 +37,37 @@ class Product extends \Core\Controller{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 
         }         
     }
-    public function editAction(){
+    public function editAction($id){
         if(Config::checkLogin()){
-            if(isset($_GET['id'])){
-                $data = Admins::getData('products',$_GET['id'],'productId');
+                $data = Admins::getData('products',$id,'productId');
                 $categories = Admins::displayData('category');
-                $pro_cat = Admins::getData('products_category',$_GET['id'],'productId');
+                $pro_cat = Admins::getData('products_category',$id,'productId');
                 $category = [];
                 foreach($pro_cat as $key=>$value){
                     array_push($category,$pro_cat[$key]['categoryId']);
                 }
                 View::renderTemplate('Admin/addProduct.html',['data'=>$data[0],'categories'=>$categories,'productCategory'=>$category]);
                 if(isset($_POST['submit'])){
-                     Admins::editData($_POST,'products','productId');
-                     Admins::deleteData('products_category',$_GET['id'],'productId');
+                     Admins::editData($_POST,'products','productId',$id);
+                     Admins::deleteData('products_category',$id,'productId');
                      $catId = $_POST['category'];
                      foreach($catId as $key=>$value){
                          $data = [];
-                         $data['productId'] = $_GET['id'];
+                         $data['productId'] = $id;
                          $data['categoryId'] = $catId[$key];
                          Admins::insertData($data,'products_category');
                      }           
                      header("Location:/MVCFRAMEWORK/public/admin/product");
                 }              
-             }
         }
         else{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 
         }        
     }
-    public function deleteAction(){
+    public function deleteAction($id){
         if(Config::checkLogin()){
-            if(isset($_GET['id'])){
-                Admins::deletedata('products',$_GET['id'],'productId');
+                Admins::deletedata('products',$id,'productId');
                 header("Location:/MVCFRAMEWORK/public/admin/product");
-            }
         }
         else{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 

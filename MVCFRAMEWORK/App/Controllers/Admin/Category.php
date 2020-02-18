@@ -29,29 +29,25 @@ class Category extends \Core\Controller{
         } 
                
     }
-    public function editAction(){
+    public function editAction($id){
         if(Config::checkLogin()){
-            if(isset($_GET['id'])){
-                $data = Admins::getData('category',$_GET['id'],'categoryId');
+                $data = Admins::getData('category',$id,'categoryId');
                 $parents = Admins::displayData('parentcategory');
                 View::renderTemplate('Admin/addCategory.html',['data' => $data[0],'parents'=>$parents]);
                 if(isset($_POST['submit'])){
-                     Admins::editData($_POST,'category','categoryId');
+                     Admins::editData($_POST,'category','categoryId',$id);
                      header("Location:/MVCFRAMEWORK/public/admin/category");
                 }              
-             } 
         }
         else{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 
         }
         
     }
-    public function deleteAction(){
+    public function deleteAction($id){
         if(Config::checkLogin()){
-            if(isset($_GET['id'])){
-                Admins::deletedata('category',$_GET['id'],'categoryId');
+                Admins::deletedata('category',$id,'categoryId');
                 header("Location:/MVCFRAMEWORK/public/admin/category");
-            }
         }
         else{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 

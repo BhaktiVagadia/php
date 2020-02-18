@@ -29,15 +29,15 @@
                 <td>
                     <select name="status">
                         {% if data.status == "available" %}
-                                {% set selected="selected" %}
+                                {% set selected = "selected" %}
                             {% else %}
-                                {% set selected="" %}
+                                {% set selected = "" %}
                         {% endif %}
                         <option value="available" {{selected}}>Available</option>
                         {% if data.status == "Not-Available" %}
-                                {% set selected="selected" %}
+                                {% set selected = "selected" %}
                             {% else %}
-                                {% set selected="" %}
+                                {% set selected = "" %}
                         {% endif %}
                         <option value="Not-Available" {{selected}}>Not Available</option>
                     </select>

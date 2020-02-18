@@ -27,25 +27,23 @@ class CmsPage extends \Core\Controller{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 
         }       
     }
-    public function editAction(){
+    public function editAction($id){
         if(Config::checkLogin()){
-            if(isset($_GET['id'])){
-                $data = Admins::getData('cms_page',$_GET['id'],'id');
+                $data = Admins::getData('cms_page',$id,'id');
                 View::renderTemplate('Admin/addCmsPage.html',['data' => $data[0]]);
                 if(isset($_POST['submit'])){
-                     Admins::editData($_POST,'cms_page','id');
+                     Admins::editData($_POST,'cms_page','id',$id);
                      header("Location:/MVCFRAMEWORK/public/admin/cms/cmsPage");
                 }              
-            } 
         }
         else{
             header("Location:/MVCFRAMEWORK/public/admin/admin/login"); 
         }    
     }
-    public function deleteAction(){
+    public function deleteAction($id){
         if(Config::checkLogin()){
             if(isset($_GET['id'])){
-                Admins::deletedata('cms_page',$_GET['id'],'id');
+                Admins::deletedata('cms_page',$id,'id');
                 header("Location:/MVCFRAMEWORK/public/admin/cms/cmsPage");
             }
         }

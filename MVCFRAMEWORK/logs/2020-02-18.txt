@@ -43,3 +43,24 @@ Message : 'No Route matched'
 Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('category/view/')
 #1 {main}
 Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line55
+[18-Feb-2020 09:27:32 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line56
+[18-Feb-2020 09:27:37 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/e...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line56
+[18-Feb-2020 09:28:36 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/e...')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line56
+[18-Feb-2020 10:17:30 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'Method viewAction not found in controllerApp\Controllers\Admin\Product'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(49): Core\Controller->__call('view', Array)
+#1 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(19): Core\Router->dispatch('admin/product/v...')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php' on Line18

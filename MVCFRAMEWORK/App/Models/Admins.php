@@ -8,7 +8,7 @@ class Admins extends \Core\Model {
         $values = implode("','",array_values($tableData));
         try{
             $db = static::getDB();
-            echo $query = "INSERT INTO $table ($field) VALUES ('$values')";
+            $query = "INSERT INTO $table ($field) VALUES ('$values')";
             $db->exec($query);
 
         }
@@ -37,7 +37,7 @@ class Admins extends \Core\Model {
             echo $e->getMessage();
         } 
     }
-    public static function editData($data,$table,$condition){
+    public static function editData($data,$table,$condition,$id){
         $tableData = Admins::filterData($data,$table);
         $temp = "";
         foreach($tableData as $field=>$value){
@@ -46,7 +46,7 @@ class Admins extends \Core\Model {
         $updateData = substr($temp,0,strlen($temp)-1);
         try{
             $db = static::getDB();
-            $query = "UPDATE $table SET $updateData where $condition ='".$_GET['id']."'";
+            $query = "UPDATE $table SET $updateData where $condition ='".$id."'";
             $db->exec($query);
         }
         catch(PDOException $e){

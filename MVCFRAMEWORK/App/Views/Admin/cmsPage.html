@@ -16,8 +16,8 @@
             <td>{{ page.content }}</td> 
             <td>{{ page.status }}</td> 
             <td>{{ page.urlKey }}</td> 
-            <td><a href="/MVCFRAMEWORK/public/admin/cms/cmsPage/edit?id={{ page.id }}">Edit</a></td>
-            <td><a href="/MVCFRAMEWORK/public/admin/cms/cmsPage/delete?id={{ page.id }}">Delete</a></td> 
+            <td><a href="/MVCFRAMEWORK/public/admin/cms/cmsPage/edit/{{ page.id }}">Edit</a></td>
+            <td><a href="/MVCFRAMEWORK/public/admin/cms/cmsPage/delete/{{ page.id }}">Delete</a></td> 
             </tr>
         {% endfor %}
     </table>
