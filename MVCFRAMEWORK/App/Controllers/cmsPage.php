@@ -5,11 +5,13 @@ use App\Models\Categories;
 use App\Models\CmsPages;
 class CmsPage extends \Core\Controller{
     public function viewAction(){
-        $url = $_SERVER['QUERY_STRING'];
-        $temp = substr($url,strripos($url,"/")+1);
+        $parents = Categories::fetchParents();
         $category = Categories::fetchAll();
+        View::renderTemplate("header.html",['parents'=>$parents,'categories'=>$category]);
+
+        $url = $_SERVER['QUERY_STRING'];
+        $temp = substr($url,strripos($url,"/")+1);     
         $data = CmsPages::displayData($temp);
-        View::renderTemplate("header.html",['categories'=>$category]);
         if($data != []){
             View::renderTemplate("cmsPage.html",$data[0]);
         }
@@ -20,10 +22,12 @@ class CmsPage extends \Core\Controller{
         View::renderTemplate("footer.html",['cmspages'=>$cmsPage]);
     }
     public function homeAction(){
-        $category = Categories::fetchAll();
-        $data = CmsPages::displayData('home'); 
+        $category = Categories::fetchAll();        
         View::renderTemplate("header.html",['categories'=>$category]);
-        View::renderTemplate("cmsPage.html",$data[0]); 
+
+        $data = CmsPages::displayData('home');
+        View::renderTemplate("cmsPage.html",$data[0]);
+
         $cmsPage = CmsPages::fetchAll();           
         View::renderTemplate("footer.html",['cmspages'=>$cmsPage]);
     }

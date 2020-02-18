@@ -1,9 +1,10 @@
 <html>
     <body>
-        <nav style="background-color: aqua; padding-left:60%;padding-top: 10px; padding-bottom: 10px;">
+        <nav style="background-color: aqua; padding-left:60%;padding-top: 18px; padding-bottom: 18px;">
             {% for cmspage in cmspages %}
                 <a href="/MVCFRAMEWORK/public/cmsPage/view/{{cmspage.urlKey}}" style="padding-right: 15px;">{{cmspage.pageTitle}}</a>
             {% endfor %}
         </nav>
+        </div>
     </body>
 </html>

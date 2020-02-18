@@ -3,19 +3,22 @@
     {% if category.status == "Not-Available" %}
         <h1>Sorry, This {{category.CategoryName}} Category is Currently Not-Available!!</h1>
     {% else %}
-    <h2>Category Name : {{category.CategoryName}}</h2>
-    <p><img src="../../../uploads/{{category.image}}" height="100px" width="100px"></p>
-    <p>Description : {{category.description}}</p>
-
-        <h3>Products</h3>
-           <div style="display: flex; border: 2px solid rgb(228, 26, 26);"> 
-            {% for product in products %}
-            <div style="padding-left: 30px;">
-                <p><img src="../../../uploads/{{product.image}}" height="100px" width="100px"></p>
-                <p><a href="/MVCFRAMEWORK/public/product/view/{{product.producName}}">{{product.producName}}</a></p>
-                <p>Price : {{product.price}}</p>
+        <h2>Category Name : {{category.CategoryName}}</h2>
+        <p><img src="../../../uploads/{{category.image}}" height="100px" width="100px"></p>
+        <p><b>Description : </b>{{category.description}}</p>
+        {% if products != [] %}
+            <h3>Products</h3>
+            <div style="display: flex; border: 2px solid rgb(228, 26, 26);"> 
+                {% for product in products %}
+                <div style="padding-left: 30px;">
+                    <p><img src="../../../uploads/{{product.image}}" height="100px" width="100px"></p>
+                    <p><a href="/MVCFRAMEWORK/public/product/view/{{product.producName}}">{{product.producName}}</a></p>
+                    <p>Price : {{product.price}}</p>
+                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-          </div>  
+        {% else %} 
+            <h3>Sorry, This Category {{category.CategoryName}} has No Products!!</h3>
+        {% endif %} 
     {% endif %}
 {% endblock %}

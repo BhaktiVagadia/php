@@ -2,11 +2,17 @@
 {% if status == "Not-Available" %}
     <h1>Sorry, This {{ producName }} Product is Currently Not-Available!!</h1>
 {% else %}
-    <h2>Product Name : {{ producName }}</h2>
-    <h3>Product Image : </h3><img src="../../../uploads/{{ image }}" height="150px" width="150px">
-    <h3>Product Price : {{price}}</h3>
-    <h3>Product Stock : {{stock}}</h3>
-    <h3>Description : {{description}}</h3>
-    <h3>Sort Description : {{shortDescription}}</h3>
+<div style="display: flex;">
+    <div style="padding-left: 30px; padding-right: 50px;">
+        <img src="../../../uploads/{{ image }}" height="150px" width="150px">
+    </div>
+    <div>
+        <h2>Product Name : {{ producName }}</h2>    
+        <h3>Product Price : {{price}}</h3>
+        <h3>Product Stock : {{stock}}</h3>
+        <h3>Description : {{description}}</h3>
+        <h3>Sort Description : {{shortDescription}}</h3>
+    </div>
+</div>
 {% endif %}
 {% endblock%}

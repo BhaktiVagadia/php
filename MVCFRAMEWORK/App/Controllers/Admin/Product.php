@@ -17,13 +17,15 @@ class Product extends \Core\Controller{
     public function addAction(){
         if(Config::checkLogin()){
             if(isset($_POST['submit'])){
-                Admins::insertData($_POST,'products');
-                $data = [];
+                Admins::insertData($_POST,'products');             
                 $proId = Admins::getProductId();
-                $catId = Admins::getCategoryId($_POST['category']);
-                $data['productId'] = $proId[0]['productId'] ;
-                $data['categoryId'] = $catId[0]['categoryId'];
-                Admins::insertData($data,'products_category');
+                $catId = $_POST['category'];
+                foreach($catId as $key=>$value){
+                    $data = [];
+                    $data['productId'] = $proId[0]['productId'] ;
+                    $data['categoryId'] = $catId[$key];
+                    Admins::insertData($data,'products_category');
+                }
                 header("Location:/MVCFRAMEWORK/public/admin/product");
             }
             else{
@@ -41,14 +43,21 @@ class Product extends \Core\Controller{
                 $data = Admins::getData('products',$_GET['id'],'productId');
                 $categories = Admins::displayData('category');
                 $pro_cat = Admins::getData('products_category',$_GET['id'],'productId');
-                $catId = $pro_cat[0]['categoryId'];
-                $temp = Admins::getData('category',$catId,'categoryId');
-                $category = $temp[0]['CategoryName'];
+                $category = [];
+                foreach($pro_cat as $key=>$value){
+                    array_push($category,$pro_cat[$key]['categoryId']);
+                }
                 View::renderTemplate('Admin/addProduct.html',['data'=>$data[0],'categories'=>$categories,'productCategory'=>$category]);
                 if(isset($_POST['submit'])){
                      Admins::editData($_POST,'products','productId');
-                     $categoryId = Admins::getCategoryId($_POST['category']);             
-                     Admins::editProCat($categoryId[0]['categoryId'],$_GET['id']);
+                     Admins::deleteData('products_category',$_GET['id'],'productId');
+                     $catId = $_POST['category'];
+                     foreach($catId as $key=>$value){
+                         $data = [];
+                         $data['productId'] = $_GET['id'];
+                         $data['categoryId'] = $catId[$key];
+                         Admins::insertData($data,'products_category');
+                     }           
                      header("Location:/MVCFRAMEWORK/public/admin/product");
                 }              
              }

@@ -4,12 +4,11 @@ use PDO;
 class Admins extends \Core\Model {
     public static function insertData($data,$table){
         $tableData = Admins::filterData($data,$table);
-        print_r($tableData);
         $field = implode(",",array_keys($tableData));
         $values = implode("','",array_values($tableData));
         try{
             $db = static::getDB();
-            $query = "INSERT INTO $table ($field) VALUES ('$values')";
+            echo $query = "INSERT INTO $table ($field) VALUES ('$values')";
             $db->exec($query);
 
         }
@@ -31,7 +30,7 @@ class Admins extends \Core\Model {
     public static function deleteData($table,$id,$condition){
         try{
             $db = static::getDB();
-            $query = "DELETE FROM $table where $condition=$id";
+            $query = "DELETE FROM $table where $condition='$id'";
             $db->exec($query);
         }
         catch(PDOException $e){
@@ -54,16 +53,6 @@ class Admins extends \Core\Model {
             echo $e->getMessage();
         }
     }
-    public static function editProCat($catId,$proId){
-        try{
-            $db = static::getDB();
-            $query = "UPDATE products_category SET categoryId='$catId' where productId='$proId'";
-            $db->exec($query);
-        }
-        catch(PDOException $e){
-            echo $e->getMessage();
-        } 
-    }
     public static function getProductId(){
         try{
             $db = static::getDB();
@@ -78,7 +67,9 @@ class Admins extends \Core\Model {
     public static function getCategoryId($category){
         try{
             $db = static::getDB();
-            $stmt = $db->query("SELECT categoryId FROM category where CategoryName='$category'");
+            $categories = implode("','",$category);
+            echo "SELECT categoryId FROM category where CategoryName in ('$categories')";
+            $stmt = $db->query("SELECT categoryId FROM category where CategoryName in ('$categories')");
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;               
         }

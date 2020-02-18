@@ -12,16 +12,17 @@
             </tr>
             <tr>
                 <td>Category</td>
+               
                 <td>
-                    <select name="category">
-                        {% for category in categories %}                      
-                            {% if category.CategoryName == productCategory %}
+                    <select name="category[]" multiple>
+                        {% for category in categories %}
+                            {% if category.categoryId in productCategory%}                      
                                 {% set selected="selected" %}
                             {% else %}
                                 {% set selected="" %}
-                            {% endif %}
+                            {% endif %} 
                             
-                            <option value="{{ category.CategoryName }}" {{ selected }}>{{ category.CategoryName }}</option>
+                            <option value="{{ category.categoryId }}" {{ selected }}>{{ category.CategoryName }}</option>
                         {% endfor %}
                     </select>
                 </td>

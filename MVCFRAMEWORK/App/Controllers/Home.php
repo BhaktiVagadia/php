@@ -10,10 +10,13 @@ use App\Models\CmsPages;
         protected function after(){
         }
         public function indexAction(){
+            $parents = Categories::fetchParents();
             $category = Categories::fetchAll();
-            View::renderTemplate("header.html",['categories'=>$category]);
+            View::renderTemplate("header.html",['parents'=>$parents,'categories'=>$category]);
+
             $data = CmsPages::displayData('home');
             View::renderTemplate("cmsPage.html",$data[0]);
+
             $cmsPage = CmsPages::fetchAll();           
             View::renderTemplate("footer.html",['cmspages'=>$cmsPage]);
         }

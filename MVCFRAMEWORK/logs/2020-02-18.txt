@@ -1,0 +1,45 @@
+[18-Feb-2020 05:23:04 Europe/Berlin] Uncaught Exception: 'PDOException'
+Message : 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'urlKey''
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php(13): PDO->exec('INSERT INTO pro...')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Admin\Product.php(20): App\Models\Admins::insertData(Array, 'products')
+#2 [internal function]: App\Controllers\Admin\Product->addAction()
+#3 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(44): Core\Controller->__call('add', Array)
+#5 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/a...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php' on Line13
+[18-Feb-2020 05:24:53 Europe/Berlin] Uncaught Exception: 'PDOException'
+Message : 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'urlKey''
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php(12): PDO->exec('INSERT INTO pro...')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Admin\Product.php(20): App\Models\Admins::insertData(Array, 'products')
+#2 [internal function]: App\Controllers\Admin\Product->addAction()
+#3 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(44): Core\Controller->__call('add', Array)
+#5 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/a...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php' on Line12
+[18-Feb-2020 05:25:48 Europe/Berlin] Uncaught Exception: 'PDOException'
+Message : 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'urlKey''
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php(12): PDO->exec('INSERT INTO pro...')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Admin\Product.php(20): App\Models\Admins::insertData(Array, 'products')
+#2 [internal function]: App\Controllers\Admin\Product->addAction()
+#3 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(44): Core\Controller->__call('add', Array)
+#5 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/a...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php' on Line12
+[18-Feb-2020 05:26:15 Europe/Berlin] Uncaught Exception: 'PDOException'
+Message : 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'urlKey''
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php(12): PDO->exec('INSERT INTO pro...')
+#1 C:\xampp\htdocs\MVCFRAMEWORK\App\Controllers\Admin\Product.php(20): App\Models\Admins::insertData(Array, 'products')
+#2 [internal function]: App\Controllers\Admin\Product->addAction()
+#3 C:\xampp\htdocs\MVCFRAMEWORK\Core\Controller.php(13): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php(44): Core\Controller->__call('add', Array)
+#5 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('admin/Product/a...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\App\Models\Admins.php' on Line12
+[18-Feb-2020 08:48:02 Europe/Berlin] Uncaught Exception: 'Exception'
+Message : 'No Route matched'
+Stack Trace :#0 C:\xampp\htdocs\MVCFRAMEWORK\public\index.php(17): Core\Router->dispatch('category/view/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\MVCFRAMEWORK\Core\Router.php' on Line55
