@@ -14,7 +14,7 @@
         {% for product in products %} 
             <tr>
                 <td>{{ product.producName }}</td>
-                <td><img src="../../uploads/{{ product.image }}" height="50px" width="50px"></td>
+                <td><img src="/MVCFRAMEWORK/uploads/{{ product.image }}" height="50px" width="50px"></td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.stock }}</td>
                 <td>{{product.status}}</td>
