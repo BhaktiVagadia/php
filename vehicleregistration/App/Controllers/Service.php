@@ -8,31 +8,30 @@ class Service extends \Core\Controller{
         $services = Users::displayData();
         View::renderTemplate("dashboard.html",['services'=>$services]);
     }
-    public function registrationAction(){
-        View::renderTemplate("service.html");
+    public function registrationAction(){ 
         if(isset($_POST['submit'])){
             $serviceData = Service::serviceData($_POST);
-            $userId = $serviceData['userId'];
-            $licenceNo = $serviceData['licenceNo'];
-            $vehicleNo = $serviceData['vehicleNo'];
-            $timeSlot = $serviceData['timeslot'];
-            $date = $serviceData['date'];
-            $checkNumber = Services::checkNumber($userId,$vehicleNo,$licenceNo);
-            $checkTime = Services::checkTimeSlot($timeSlot,$date);
+            $checkNumber = Services::checkNumber($serviceData['userId'],$serviceData['vehicleNo'],$serviceData['licenceNo']);
+            $checkTime = Services::checkTimeSlot($serviceData['timeslot'],$serviceData['date']);
             $timeCount = count($checkTime);
             if($checkNumber == []){
                 if($timeCount < 3){
                     $serviceId = Users::insert($serviceData,'serviceregistration');
-                    header("Location:/vehicleregistration/public/User/viewService");
+                   header("Location:/vehicleregistration/public/User/viewService");
                 }
                 else{
                     echo "On that day 3 Slots Already Given";
+                    View::renderTemplate('service.html');
+                    //header("location:/vehicleregistration/public/Service/registration")
                 }
             }
             else{
-                echo "Vehicle Number & Licence Number Already Exists !!";
+                echo "Vehicle Number & Licence Number are Used by Other Users !!";
             }
             
+        }
+        else{
+            View::renderTemplate("service.html");
         }
     }
     public function serviceData($data){

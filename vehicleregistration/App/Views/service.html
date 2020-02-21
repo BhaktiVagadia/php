@@ -1,5 +1,20 @@
 {% block body %}
 <html>
+    <head>
+        <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet"
+            type="text/css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script language="javascript">
+            $(document).ready(function () {
+                $("#createdate").datepicker({
+                    minDate: 0
+                });
+            });
+        </script>
+    </head>
+    <body>
+   
     <form method="POST">
         <table>
             <tr>
@@ -16,7 +31,7 @@
             </tr>
             <tr>
                 <td>Date</td>
-                <td><input type="date" name="date" value={{date}}></td>
+                <td><input type="text" name="date" id="createdate" value={{date}}></td>
             </tr>
             <tr>
                 <td>Timeslot</td>
@@ -70,5 +85,6 @@
             </tr>
         </table>
     </form>
+</body>
 </html>
 {% endblock %}

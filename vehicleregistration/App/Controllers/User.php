@@ -32,6 +32,7 @@ class User extends \Core\Controller{
         View::renderTemplate("register.html");
         if(isset($_POST['submit'])){
             $userData = User::userData($_POST);
+            $user = Users::checkEmail();
             $userId = Users::insert($userData,'users');
             $addressData = User::addressData($_POST,$userId);
             $addressId = Users::insert($addressData,'useraddress');

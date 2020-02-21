@@ -10,8 +10,6 @@ class Admin extends \Core\Controller{
     }
     public function editServiceAction(){
         $id = $_GET['id'];
-        $services = Users::displayService($id);
-        View::renderTemplate("service.html",$services[0]);
         if(isset($_POST['submit'])){
             $data = Admin::serviceData($_POST);
             $service = Users::displayService($id);
@@ -22,14 +20,19 @@ class Admin extends \Core\Controller{
             if($checkNumber == []){
                 if($timeCount < 3){
                     Users::editService($id,$data);
+                    header("location:/vehicleregistration/public/Admin");
                 }
                 else{
                     echo "On that day 3 Slots Already Given";
                 }
             }
             else{
-                echo "Vehicle Number & Licence Number Already Exists !!";
+                echo "Vehicle Number & Licence Number are Used by Other Users !!";
             }
+        }
+        else{
+            $services = Users::displayService($id);
+            View::renderTemplate("service.html",$services[0]);
         }
     }
     public function serviceData($data){

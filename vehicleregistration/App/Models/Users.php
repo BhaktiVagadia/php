@@ -26,6 +26,9 @@ class Users extends \Core\Model{
             echo $e->getMessage();
         }
     }
+    public static function checkEmail(){
+        
+    }
     public static function displayData(){
         try{
             $db = static::getDB();
