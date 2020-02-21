@@ -1,0 +1,28 @@
+<html>
+    <a href="/vehicleregistration/public/Service/registration">Vehicle Service Registration</a>
+    {% block body%}
+<html>
+    <h1>Services</h1>
+    <table border="1px solid black">
+        <tr>
+            <th>Title</th>
+            <th>Timeslot</th>
+            <th>Date</th>
+            <th>Service Center</th>
+            <th>Issue</th>
+            <th>Status</th>
+        </tr>
+        {% for service in services %}
+            <tr>
+                <td>{{service.title}}</td>
+                <td>{{service.timeslot}}</td>
+                <td>{{service.serviceCenter}}</td>
+                <td>{{service.date}}</td>
+                <td>{{service.vehicleIssue}}</td>
+                <td>{{service.status}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</html>
+{% endblock %}
+</html>

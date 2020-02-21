@@ -1,0 +1,23 @@
+
+{% block body%}
+<html>
+    <table border="1px solid black">
+        <tr>
+            <th>Title</th>
+            <th>Timeslot</th>
+            <th>Date</th>
+            <th>Service Center</th>
+            <th>Issue</th>
+        </tr>
+        {% for service in services %}
+            <tr>
+                <td>{{service.title}}</td>
+                <td>{{service.timeslot}}</td>
+                <td>{{service.serviceCenter}}</td>
+                <td>{{service.date}}</td>
+                <td>{{service.vehicleIssue}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</html>
+{% endblock %}

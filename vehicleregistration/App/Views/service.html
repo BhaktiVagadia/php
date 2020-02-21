@@ -1,0 +1,74 @@
+{% block body %}
+<html>
+    <form method="POST">
+        <table>
+            <tr>
+                <td>Title</td>
+                <td><input type="text" name="title" value="{{ title }}"></td>
+            </tr>
+            <tr>
+                <td>Vehicle Number</td>
+                <td><input type="text" name="vehicleNo" value="{{vehicleNo}}"></td>
+            </tr>
+            <tr>
+                <td>Licence Number</td>
+                <td><input type="text" name="licenceNo" value="{{licenceNo}}"></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" name="date" value={{date}}></td>
+            </tr>
+            <tr>
+                <td>Timeslot</td>
+                <td>
+                    <select name="timeslot">
+                        {% set time = ["9-10","10-11","11-12","12-01","1-2","2-3","3-4","4-5","5-6"]%}
+                        {% for t in time %}
+                            {% if t == timeslot %}
+                                {% set selected = "selected" %}
+                            {% else %}
+                                {% set selected = "" %}
+                            {% endif %}
+                            <option value="{{ t }}" {{selected}}>{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Vehicle Issue</td>
+                <td><textarea name="vehicleIssue" rows="3" cols="25">{{vehicleIssue}}</textarea></td>
+            </tr>
+            <tr>
+                <td>Service Center</td>
+                <td>
+                    <select name="serviceCenter">
+                        {% set center = ["center1","center2","center3","center4","center5"] %}
+                        {% for c in center%}
+                            {% if c == serviceCenter %}
+                                {% set selected = "selected" %}
+                            {% else %}
+                                {% set selected = "" %}
+                            {% endif %}
+                            <option value="{{ c }}" {{selected}}>{{ c }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>
+                    <select name="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Approve">Approve</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</html>
+{% endblock %}
